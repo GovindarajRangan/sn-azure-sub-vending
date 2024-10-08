@@ -1,0 +1,54 @@
+[
+    {
+        "location": "eastus",
+
+        "subscription_alias_enabled": true,
+        "subscription_billing_scope": "/providers/Microsoft.Billing/billingAccounts/1234567/enrollmentAccounts/123456",
+        "subscription_display_name": "len-subcription-vending-test",
+        "subscription_alias_name": "len-subcription-vending-test",
+        "subscription_workload": "DevTest",
+        "subscription_management_group_association_enabled": true,
+        "subscription_management_group_id": "Len_NonProd",
+        "network_watcher_resource_group_enabled": true,
+        
+        "budget_enabled": true,   
+        "budgets": {
+            "budget1": {
+              "amount": 1000,
+              "time_grain": "Monthly",
+              "time_period_start": "2024-10-01T00:00:00Z",
+              "time_period_end": "2027-12-31T23:59:59Z",
+              "notifications": {
+                "eightypercent": {
+                  "enabled": true,
+                  "operator": "GreaterThan",
+                  "threshold": 80,
+                  "threshold_type": "Actual",
+                  "contact_emails": ["govindaraj.rangan@lennar.com"], "__COMMENT__":"Change email address"
+                },
+                "budgetexceeded": {
+                  "enabled": true,
+                  "operator": "GreaterThan",
+                  "threshold": 120,
+                  "threshold_type": "Forecasted",
+                  "contact_roles": ["Owner"]
+                }
+              }
+            }
+        },
+
+        "resource_group_creation_enabled": true,
+        "resource_groups": {
+            "test-resource-group": {
+                "name": "test-resource-group",
+                "location": "eastus"
+            }
+        },
+
+        "virtual_network_enabled": false,
+
+        "umi_enabled": false,
+
+        "role_assignment_enabled": false
+    }
+]
